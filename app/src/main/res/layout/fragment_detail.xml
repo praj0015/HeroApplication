@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="hero"
+            type="com.example.heroapplication.model.HeroModel" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.DetailFragment">
+
+        <ImageView
+            android:id="@+id/heroImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:imageUrl="@{hero.img}"
+            android:paddingTop="20dp"
+            android:scaleType="fitCenter"
+            android:minHeight="200dp"/>
+
+        <TextView
+            android:id="@+id/localized_Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/heroImage"
+            android:text= "@{`localized_name:   ` + hero.localized_name}"
+            style="@style/Title"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:id="@+id/heroName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/localized_Name"
+            android:text="@{`name:   ` + hero.name}"
+            style="@style/Title"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:id="@+id/primary_attr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/heroName"
+            android:text="@{`primary_attr:   ` + hero.primary_attr}"
+            style="@style/Title"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:id="@+id/attack_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/primary_attr"
+            android:text="@{`attack_type:   ` + hero.attach_type}"
+            style="@style/Title"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:id="@+id/base_health"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/attack_type"
+            android:text="@{`base_health:   ` + hero.base_health}"
+            style="@style/Title"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="4dp"/>
+
+    </RelativeLayout>
+
+</layout>
